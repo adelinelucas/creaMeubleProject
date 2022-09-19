@@ -2,7 +2,9 @@ import dotenv from 'dotenv';
 import express from 'express';
 import path from "path";
 import { fileURLToPath } from "url";
-import {connectDB} from './bdd/connect.js'
+import {connectDB} from './bdd/connect.js';
+import authRouter from "./routes/userRouter.js";
+import meubleRouter from "./routes/meublesRouter.js";
 // ==========
 // App initialization
 // ==========
@@ -15,7 +17,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // App 
 // ==========
 const app = express();
-
+app.use(express.json());
 // ==========
 // Pug 
 // ==========
@@ -26,7 +28,8 @@ app.set("view engine", "pug");
 // App routers
 // ==========
 
-// app.use("/", route);
+app.use("/auth", authRouter);
+app.use('/creMeuble', meubleRouter)
 
 // ==========
 // App start

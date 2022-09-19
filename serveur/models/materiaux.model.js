@@ -7,11 +7,11 @@ const MateriauxSchema = new mongoose.Schema({
         required:[true, 'Merci de renseigner le nom du matériaux'],
         unique:true,
     },
-    CategorieMateriaux: {
+    materialCategory: {
         type: String,
         enum:['bois' , 'fer', 'plastique']
     },
-    fournisseur: {
+    vendor: {
         type: mongoose.Types.ObjectId,
         ref: 'Fournisseur',
         required:[true, 'Merci de renseigner le fournisseur du matériaux'],

@@ -30,7 +30,7 @@ const UserSchema = new mongoose.Schema({
         minlength: 4,
     },
     role: {
-        type:number,
+        type:Number,
         required:[true, 'Merci de renseigner un role'],
         default: 0
     },
@@ -40,6 +40,15 @@ UserSchema.pre('save', async function(){
     const salt = await bcrypt.genSalt(10);
     this.password = await bcrypt.hash(this.password, salt)
 })
+
+UserSchema.methods.checkPassword = function (loginPassword){  
+    return bcrypt.compare(loginPassword, this.password);
+}
+
+UserSchema.methods.addJWT = function (){  
+    return jwt.sign({userId: this._id, lastname:this.lastname, firstname:this.firstname}, process.env.JWT_SECRET, {expiresIn:process.env.JWT_LIFETIME})
+
+}
 
 const UserModel = mongoose.model('User', UserSchema)
 export default UserModel;
