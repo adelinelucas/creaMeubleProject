@@ -1,4 +1,4 @@
-import UserModel from '../Models/user.model.js';
+import UserModel from '../models/user.model.js';
 
 export const register = async (req, res) => {
     console.log(req.body);

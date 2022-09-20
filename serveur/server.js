@@ -6,6 +6,8 @@ import {connectDB} from './bdd/connect.js';
 import authRouter from "./routes/userRouter.js";
 import meubleRouter from "./routes/meublesRouter.js";
 import adminRouter from "./routes/adminRouter.js";
+import {auth} from './middleware/auth.js'
+
 // ==========
 // App initialization
 // ==========

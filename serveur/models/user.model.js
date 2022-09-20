@@ -50,5 +50,5 @@ UserSchema.methods.addJWT = function (){
 
 }
 
-const UserModel = mongoose.model('User', UserSchema)
+const UserModel = mongoose.models.UserModel || mongoose.model('User', UserSchema) 
 export default UserModel;
