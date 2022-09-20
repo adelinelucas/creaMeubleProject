@@ -24,6 +24,7 @@ export const login = async(req, res) => {
             if(!isPasswordCorrect) throw err
 
             const token = user.addJWT();
+            req.session.token = token;
             res.status(200).json({user:{lastname: user.lastname}, token})
         
         }else{
@@ -34,3 +35,12 @@ export const login = async(req, res) => {
     }
 }
 
+export const logout = async(req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+          return res.status(500).send({ error: err.message });
+        }
+    
+        res.redirect('/');
+      });
+}
