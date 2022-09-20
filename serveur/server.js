@@ -6,7 +6,8 @@ import {connectDB} from './bdd/connect.js';
 import authRouter from "./routes/userRouter.js";
 import meubleRouter from "./routes/meublesRouter.js";
 import adminRouter from "./routes/adminRouter.js";
-import {auth} from './middleware/auth.js'
+import {auth} from './middleware/auth.js';
+import session from "express-session";
 
 // ==========
 // App initialization
@@ -21,6 +22,15 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // ==========
 const app = express();
 app.use(express.json());
+
+// ouverture d'une session
+app.use(session({
+    name: 'simple',
+    secret: 'simple',
+    resave: false,
+    saveUninitialized: true
+  }))
+  
 // ==========
 // Pug 
 // ==========
@@ -33,7 +43,7 @@ app.set("view engine", "pug");
 
 app.use("/auth", authRouter);
 app.use('/meubles', meubleRouter);
-app.use('/admin', adminRouter);
+app.use('/admin',auth, adminRouter);
 // ==========
 // App start
 // ==========
