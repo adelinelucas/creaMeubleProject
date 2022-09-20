@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 import {connectDB} from './bdd/connect.js';
 import authRouter from "./routes/userRouter.js";
 import meubleRouter from "./routes/meublesRouter.js";
+import adminRouter from "./routes/adminRouter.js";
 // ==========
 // App initialization
 // ==========
@@ -29,8 +30,8 @@ app.set("view engine", "pug");
 // ==========
 
 app.use("/auth", authRouter);
-app.use('/creMeuble', meubleRouter)
-
+app.use('/meubles', meubleRouter);
+app.use('/admin', adminRouter);
 // ==========
 // App start
 // ==========

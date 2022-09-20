@@ -7,11 +7,11 @@ const MeubleSchema = new mongoose.Schema({
         required:[true, 'Merci de renseigner le nom du meuble'],
         unique:true,
         minlength: 2,
-        maxlength:20
+        maxlength:50
     },
     materials: {
         type: [mongoose.Types.ObjectId],
-        ref:'Materiaux',
+        ref:'Materials',
         required: true,  
     },
     quantity: {
@@ -29,11 +29,17 @@ const MeubleSchema = new mongoose.Schema({
     depth: {
         type: Number,
     },
+    category: {
+        type: String,
+        enum:['armoire' , 'étagère'],
+        required:true
+    },
     description: {
         type:String,
 
     }
-})
+},
+{timestamps: true})
 
 const MeubleModel = mongoose.model('Meuble',MeubleSchema)
 export default MeubleModel;

@@ -4,14 +4,14 @@ import mongoose from "mongoose";
 const FournisseurSchema = new mongoose.Schema({
     name: {
         type:String,
-        required:[true, 'Merci de renseigner le type du matériaux'],
+        required:[true, 'Merci de renseigner le nom du fournisseur'],
         unique:true,
         minlength: 2,
         maxlength: 50,
     },
-    NumeroSiret: {
+    numeroSiret: {
         type:String,
-        required:[true, 'Merci de renseigner le siret du fournisseur'],
+        required:[true, 'Merci de renseigner le numéro siret du fournisseur'],
         unique:true,
         minlength: 2,
         maxlength: 150,

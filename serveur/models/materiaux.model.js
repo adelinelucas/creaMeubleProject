@@ -18,5 +18,5 @@ const MateriauxSchema = new mongoose.Schema({
     }
 })
 
-const MateriauxModel = mongoose.model('Materiaux',MateriauxSchema)
+const MateriauxModel = mongoose.model('Materials',MateriauxSchema)
 export default MateriauxModel;
