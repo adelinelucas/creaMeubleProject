@@ -8,6 +8,7 @@ import meubleRouter from "./routes/meublesRouter.js";
 import adminRouter from "./routes/adminRouter.js";
 import {auth} from './middleware/auth.js';
 import session from "express-session";
+import cors from 'cors';
 
 // ==========
 // App initialization
@@ -23,6 +24,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 app.use(express.json());
 
+// ==========
+// Cors
+// ==========
+app.use(cors({
+    origin: process.env.ORIGIN,
+  }));
 // ouverture d'une session
 app.use(session({
     name: 'simple',
@@ -30,12 +37,6 @@ app.use(session({
     resave: false,
     saveUninitialized: true
   }))
-  
-// ==========
-// Pug 
-// ==========
-
-app.set("view engine", "pug");
 
 // ==========
 // App routers

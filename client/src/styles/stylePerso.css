@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Smokum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap');
+
+/* font-family: 'Palette Mosaic', cursive;*/
+
+/* font-family: 'Smokum', cursive; */
+
+/* font-family: 'Bungee', cursive; */
+
+body{
+    overflow: hidden;
+    margin:0;
+    padding: 0;
+    width: 100vw;
+    display: flex;
+    box-sizing: border-box;
+    background-color: #F2F2F2;
+    height: 100%;
+}
+.app {
+    width: 100vw;
+    height: 100%;
+}
+
+.header {
+    width: 100%;
+    height: 3rem;
+    background-color: #D66320;
+    color: white;
+    font-size: 1.2rem;
+    height: 9rem;
+    position:fixed;
+}
+
+.navigation {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 0.5rem;
+}
+.nav-leftPart {
+    display: flex;
+    width: 75%;
+}
+
+.nav-leftPart a,
+.navigation .connexion a {
+    color:white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    margin: 0.5rem 1rem
+}
+
+.navigation .nav-imgBloc img {
+    width: 150px;
+    z-index: 100;
+}
+
+.nav-linksBloc, .connexion {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.footer {
+    margin-top: 3rem;
+    width: 100%;
+    height: 5rem;
+    background-color: black;
+    color: white;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;   
+}
+
+.footer ul li {
+    text-decoration: none;
+    list-style: none;
+    line-height: 1.5;
+}
+
+.footer h3 {
+    font-size: 0.8rem;
+}
+
+.footer .footer-content{
+    width: 65rem;
+    display: flex ;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    position: absolute;
+    top:12rem;
+    width: 100vw;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+.homeBloc {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.banniereBloc {
+    margin: 1.5rem 0;
+}
+.banniereImg {
+    width: 500px;
+    border-radius: 30px;
+}
+
+.homeTitle{
+    font-size: 2rem;
+    font-weight: 500;
+    color:#D66320;
+}
+
+.separator {
+    height: 10px;
+    width: 150px;
+    background-color: #D66320;
+
+}
+
+.separator.down {
+    margin-left: 22rem;
+}
+
+.btnHome {
+    background-color: #D66320;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    outline: none;
+    border-radius: 15px;
+    margin-top: 3rem;
+    border: 3px solid black;
+}
+
+.btnHome a {
+    color:white;
+    text-decoration: none;
+}
+
+.btnHome:hover{
+    background-color: #993b04;
+}
+
+/* LIST */ 
+
+.listBloc {
+    display: flex;
+    flex-direction: column;
+}
+
+.meublesList {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* CARDS */ 
+article {
+    background-color: #E3E4E5;
+    margin: 1.5rem 0.7rem;
+    padding: 0.2rem 0.5rem;
+    width: 30%;
+}
+
+.card-header {
+    background-color: #D85D38;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.card-header h2 {
+    text-transform: capitalize;
+}
+.badge{
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    
+    border-radius: 5px;
+}
+.card-footer span{
+    margin: 0.2rem 0.5rem;
+}
+.orange {
+    background-color: #FFAA00;
+    color: white;
+}
+
+.black {
+    background-color: #212121;
+    color: white;
+}
+
+.connexionBloc{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+
+}
+
+.flex {
+    display:flex;
+    flex-direction: column;
+}
