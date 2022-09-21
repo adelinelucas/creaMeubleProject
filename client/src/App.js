@@ -1,4 +1,4 @@
-import {Routes, Route, Navigate,useNavigate,Redirect } from 'react-router-dom';
+import {Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -15,7 +15,7 @@ function App() {
 
 
   return (
-    <main className="app">
+    <div className="app">
       <Header />
       <Routes>
         <Route path='/' element={<Home/>} />
@@ -23,11 +23,6 @@ function App() {
         {user ? (
           <Route path='/meubles' element={<Liste/>} />
         ): 
-          // <Route
-          //   path="/redirect"
-          //   element={ <Navigate to="/" /> }
-          // />
-
           <Route
             path="*"
             element={<Navigate to="/connexion" replace />}
@@ -35,7 +30,7 @@ function App() {
         }
       </Routes>
       <Footer />
-    </main>
+    </div>
   );
 }
 

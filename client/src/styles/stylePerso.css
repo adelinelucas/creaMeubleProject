@@ -10,7 +10,6 @@
 /* font-family: 'Bungee', cursive; */
 
 body{
-    overflow: hidden;
     margin:0;
     padding: 0;
     width: 100vw;
@@ -19,9 +18,15 @@ body{
     background-color: #F2F2F2;
     height: 100%;
 }
+
 .app {
     width: 100vw;
     height: 100%;
+}
+
+main{
+    height: 100%;
+    padding: 2rem;
 }
 
 .header {
@@ -32,10 +37,12 @@ body{
     font-size: 1.2rem;
     height: 9rem;
     position:fixed;
+    top:0px;
+    z-index: 10;
 }
 
 .navigation {
-    width: 100vw;
+    width: 90vw;
     height: fit-content;
     display: flex;
     justify-content: space-between;
@@ -74,6 +81,9 @@ body{
     font-size: 0.8rem;
     display: flex;
     justify-content: center;   
+    position:fixed;
+    bottom:0px;
+    z-index: 10;
 }
 
 .footer ul li {
@@ -135,7 +145,7 @@ body{
     margin-left: 22rem;
 }
 
-.btnHome {
+.btnHome, .btnOrange {
     background-color: #D66320;
     color: white;
     font-size: 1.5rem;
@@ -144,6 +154,7 @@ body{
     border-radius: 15px;
     margin-top: 3rem;
     border: 3px solid black;
+    cursor: pointer;
 }
 
 .btnHome a {
@@ -151,7 +162,7 @@ body{
     text-decoration: none;
 }
 
-.btnHome:hover{
+.btnHome:hover, .btnOrange:hover{
     background-color: #993b04;
 }
 
@@ -160,6 +171,8 @@ body{
 .listBloc {
     display: flex;
     flex-direction: column;
+    width: 90%;
+    margin: auto;
 }
 
 .meublesList {
@@ -167,6 +180,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: auto;
 }
 
 /* CARDS */ 
@@ -207,14 +221,49 @@ article {
     color: white;
 }
 
+/* CONNEXION */ 
+
 .connexionBloc{
     width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.formBloc{
     display:flex;
     flex-direction: column;
-
+    background-color: #E3E4E5;
+    margin: 1.5rem 0.5rem;
+    padding: 0.2rem 0.5rem;
+    width: 30%;
 }
 
 .flex {
     display:flex;
     flex-direction: column;
+}
+
+.formBloc h2{
+    text-align: center;
+    color: #993b04;
+    letter-spacing: 1.2px;
+}
+
+.formBloc label{
+    color: #212121;
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+    margin-bottom: 0.2rem;
+    margin-top:0.3rem;
+}
+
+.form input{
+    outline: none;
+    margin: 0.2rem;
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+.formBloc .btnOrange {
+    margin-bottom: 1rem;
 }

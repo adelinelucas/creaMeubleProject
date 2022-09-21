@@ -5,16 +5,15 @@ const Meubles = ({meubles}) => {
     console.log(meubles.meubles)
     const meubleslist = meubles.meubles
     return (
-        <div className='meublesList'>
-            <>
+        <>
+            <p>Nombre total de meubles : <span>{meubles.count}</span></p>
+            <div className='meublesList'>
                 {meubleslist.map(( meuble => {
                     return <Card key={meuble._id} {...meuble}/>
                 }))
                 }
-            </>
-            <p>Nombre total de meubles : <span>{meubles.count}</span></p>
-        </div>
-        
+            </div>
+        </>     
     );
 };
 

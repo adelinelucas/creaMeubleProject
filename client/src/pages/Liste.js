@@ -32,15 +32,15 @@ const Liste = () => {
         )
     }
     return (
-        <section className='container listBloc'>
-            <div>
+        <main className='container listBloc'>
+            <section>
                 <h2>Nos meubles</h2>
                 <div className='separator'></div>
-            </div>
-            <>
+            </section>
+            <section>
                 <Meubles meubles={meubleCard} />
-            </>
-        </section>
+            </section>
+        </main>
     );
 };
 

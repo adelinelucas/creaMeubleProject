@@ -18,8 +18,8 @@ const Card = ({_id, category,depth,description,height, length, materials, name, 
             </div>
             <div className='card-footer'>
                 <div>
-                    <span className='badge black'>{category}</span>
-                    <span className='badge orange'>{quantity}</span>
+                    <p>Type de meuble : <span className='badge black'>{category}</span></p>
+                    <p>Quantité: <span className='badge orange'>{quantity}</span></p>
                 </div>
                 {/* <button >Voir les matériaux de fabrication</button> */}
             </div>      
