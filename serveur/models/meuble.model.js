@@ -10,8 +10,7 @@ const MeubleSchema = new mongoose.Schema({
         maxlength:50
     },
     materials: {
-        type: [mongoose.Types.ObjectId],
-        ref:'Materials',
+        type: String,
         required: true,  
     },
     quantity: {

@@ -50,7 +50,7 @@ const AddMaterials = () => {
     const fetchAddMaterials = async()=> {
         console.log(vendors)
         try{
-            const response = await fetch('http://localhost:5000/admin/category-material', {
+            const response = await fetch('http://localhost:5000/meubles/category-material', {
                 method: 'POST',
                 headers: {
                   'Accept': 'application/json',
@@ -94,7 +94,7 @@ const AddMaterials = () => {
                         <label>Category :</label>
                         <select
                             value={materialCategory}
-                            onChange={(e)=> handelMaterialCatagory(e)}
+                            onClick={(e)=> handelMaterialCatagory(e)}
                         >                            
                             {allMaterials.map((material, i) =>{
                                 return <option key={i}>{material}</option>
