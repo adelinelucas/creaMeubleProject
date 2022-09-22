@@ -164,6 +164,26 @@ main{
     cursor: pointer;
 }
 
+.btnBlack {
+    background-color: #212121;
+    color: white;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    outline: none;
+    border-radius: 15px;
+    margin-top: 3rem;
+    border: 3px solid #993b04;
+    cursor: pointer;
+}
+
+.btnBlack:hover{
+    background-color: #212121be;
+}
+
+.btnOrange.small{
+    font-size: 0.8rem;
+}
+
 .btnHome a {
     color:white;
     text-decoration: none;
@@ -226,6 +246,22 @@ article {
 .black {
     background-color: #212121;
     color: white;
+}
+
+.infoMateriel{
+    height: 40px;
+    font-size: 0.9rem;
+    font-weight: 200;
+    font-style: oblique;
+}
+
+.infoMateriel h3{
+    font-size: 1rem;
+}
+
+.newMeubleBloc.formBloc{
+    margin:5rem;
+    width: 150rem;
 }
 
 /* CONNEXION */ 

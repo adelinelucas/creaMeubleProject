@@ -53,7 +53,7 @@ const CreateMeuble = (props) => {
                 body: JSON.stringify({
                     name:name, 
                     materials:materials,
-                    quantiy:quantity, 
+                    quantity:quantity, 
                     height:height, 
                     length:length, 
                     depth:depth, 

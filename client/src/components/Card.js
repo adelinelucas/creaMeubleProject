@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import {useNavigate} from "react-router-dom";
+import DetailMaterials from './DetailMaterials';
 
 const Card = ({_id, category,depth,description,height, length, materials, name, quantity}) => {
+    const navigation = useNavigate();
+    const [showDetail, setShowDetail] = useState(false)
+    const seeDetails = ()=> {
+        setShowDetail(!showDetail)
+    }
 
     return (
         <article>
@@ -21,7 +28,21 @@ const Card = ({_id, category,depth,description,height, length, materials, name, 
                     <p>Type de meuble : <span className='badge black'>{category}</span></p>
                     <p>Quantité: <span className='badge orange'>{quantity}</span></p>
                 </div>
-                {/* <button >Voir les matériaux de fabrication</button> */}
+                {showDetail ? 
+                <div>
+                 <aside className='infoMateriel'>
+                    <h3>Matériaux utilisés : </h3>
+                    <p>{materials}</p>
+                </aside>
+                <button className='btnBlack' onClick={seeDetails}>
+                Masquer les matériaux de fabrication
+                </button>
+            </div>
+                : 
+                <button className='btnOrange small' onClick={seeDetails}>
+                    Voir les matériaux de fabrication
+                </button>
+              }
             </div>      
         </article>
     );
