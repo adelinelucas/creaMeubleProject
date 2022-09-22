@@ -9,8 +9,12 @@ const Navigation = () => {
                     <img src="./images/logo2.png" alt="logo de l'entreprise Créa Meuble" />
                 </div>
                 <div className='nav-linksBloc'>
-                    <NavLink to={'/'} className={(nav)=> (nav.isActive ? "nav-active": "")}>Accueil</NavLink>
+                    <NavLink to={'/'} 
+                    className={(nav)=> (nav.isActive ? "nav-active": "")}>
+                        Accueil
+                    </NavLink>
                     <NavLink to={"/meubles"}  className={(nav)=> (nav.isActive ? "nav-active": "")}>Voir nos meubles</NavLink>
+                    <NavLink to={"/nouveau-meuble"}  className={(nav)=> (nav.isActive ? "nav-active": "")}>Créer un meuble</NavLink>
                 </div>                
             </div>
             <div className='connexion'>

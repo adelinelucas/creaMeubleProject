@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Connexion = (props) => {
 
     const [userAuthorize, setUserAuthorize] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigation = useNavigate()
 
     const handelForm = async(e)=> {
         e.preventDefault();
@@ -28,6 +30,7 @@ const Connexion = (props) => {
               });
               const content = await response.json();
               props.setUser(content.user)
+              navigation('/meubles');
 
         }catch(err){
             console.log(err)

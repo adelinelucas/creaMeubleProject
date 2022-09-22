@@ -1,5 +1,7 @@
 import { Error } from 'mongoose';
-import MeubleModel from '../Models/meuble.model.js';
+import MeubleModel from '../models/meuble.model.js';
+import MateriauxModel from '../models/materiaux.model.js';
+import FournisseurModel from '../models/fournisseur.model.js'
 
 
 
@@ -69,6 +71,26 @@ export const deleteMeuble = async(req, res) => {
         });
         res.status(200).send();
     }catch(err){
+        res.status(400).send(err.message)
+    }
+}
+
+export const getAllMaterials = async(req,res)=>{
+    try{
+        const materials = await MateriauxModel.find({});
+        res.status(200).json({materials});
+    }catch(err){
+        console.log(err)
+        res.status(400).send(err.message)
+    }
+}
+
+export const getAllVendors = async(req,res)=>{
+    try{
+        const fournisseurs = await FournisseurModel.find({});
+        res.status(200).json({fournisseurs});
+    }catch(err){
+        console.log(err)
         res.status(400).send(err.message)
     }
 }

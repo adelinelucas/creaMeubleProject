@@ -20,7 +20,7 @@ export const login = async(req, res) => {
             
             if(!user) throw err;
 
-            const isPasswordCorrect = user.checkPassword(password)
+            const isPasswordCorrect = await user.checkPassword(password)
             if(!isPasswordCorrect) throw err
 
             const token = user.addJWT();

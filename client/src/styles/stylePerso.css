@@ -17,6 +17,7 @@ body{
     box-sizing: border-box;
     background-color: #F2F2F2;
     height: 100%;
+    overflow-x: hidden;
 }
 
 .app {
@@ -70,6 +71,12 @@ main{
     display: flex;
     align-items: center;
     margin-bottom: 3rem;
+}
+
+.nav-linksBloc a.nav-active {
+    color:black;
+    border: 3px solid black;
+    padding:0.3rem
 }
 
 .footer {

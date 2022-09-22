@@ -19,5 +19,5 @@ const FournisseurSchema = new mongoose.Schema({
 
 })
 
-const FournisseurModel = mongoose.model('Fournisseur', FournisseurSchema)
+const FournisseurModel = mongoose.models['Fournisseur'] || mongoose.model('Fournisseur', FournisseurSchema)
 export default FournisseurModel;

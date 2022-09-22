@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Liste from './pages/Liste';
 import Connexion from './pages/Connexion';
 import {useEffect, useState} from 'react';
+import CreateMeuble from './pages/CreateMeuble';
 
 function App() {
   const [user, setUser]= useState();
@@ -21,7 +22,10 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/connexion' element={<Connexion setUser={setUser}/>} />
         {user ? (
-          <Route path='/meubles' element={<Liste/>} />
+          <>
+            <Route path='/meubles' element={<Liste/>} />
+            <Route path='/nouveau-meuble' element={<CreateMeuble/>}/>
+          </>
         ): 
           <Route
             path="*"
