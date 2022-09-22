@@ -75,9 +75,20 @@ export const deleteMeuble = async(req, res) => {
     }
 }
 
+export const getAllCategoryMaterials = async(req,res)=>{
+    const materialCategory = 'materialCategory'
+    try{
+        const materials = await MateriauxModel.find({}).distinct('materialCategory');
+        res.status(200).json({materials});
+    }catch(err){
+        console.log(err)
+        res.status(400).send(err.message)
+    }
+}
+
 export const getAllMaterials = async(req,res)=>{
     try{
-        const materials = await MateriauxModel.find({});
+        const materials = await MateriauxModel.find({}).distinct('name');
         res.status(200).json({materials});
     }catch(err){
         console.log(err)

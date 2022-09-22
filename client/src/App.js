@@ -6,6 +6,8 @@ import Liste from './pages/Liste';
 import Connexion from './pages/Connexion';
 import {useEffect, useState} from 'react';
 import CreateMeuble from './pages/CreateMeuble';
+import AddVendor from './pages/AddVendor';
+import AddMaterials from './pages/AddMaterials';
 
 function App() {
   const [user, setUser]= useState();
@@ -25,6 +27,8 @@ function App() {
           <>
             <Route path='/meubles' element={<Liste/>} />
             <Route path='/nouveau-meuble' element={<CreateMeuble/>}/>
+            <Route path='/nouveau-fournisseur' element={<AddVendor/>}/>
+            <Route path='/nouveau-materiaux' element={<AddMaterials/>}/>
           </>
         ): 
           <Route

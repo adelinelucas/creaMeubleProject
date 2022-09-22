@@ -2,7 +2,7 @@ import React from 'react';
 import Card from './Card';
 
 const Meubles = ({meubles}) => {
-    console.log(meubles.meubles)
+    // console.log(meubles.meubles)
     const meubleslist = meubles.meubles
     return (
         <>

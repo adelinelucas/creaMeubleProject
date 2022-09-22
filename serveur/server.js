@@ -44,7 +44,7 @@ app.use(session({
 
 app.use("/auth", authRouter);
 app.use('/meubles', meubleRouter);
-app.use('/admin',auth, adminRouter);
+app.use('/admin', adminRouter);
 // ==========
 // App start
 // ==========
