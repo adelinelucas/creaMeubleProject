@@ -50,7 +50,7 @@ const AddMaterials = () => {
     const fetchAddMaterials = async()=> {
         console.log(vendors)
         try{
-            const response = await fetch('http://localhost:5000/meubles/category-material', {
+            const response = await fetch('http://localhost:5000/admin/material', {
                 method: 'POST',
                 headers: {
                   'Accept': 'application/json',

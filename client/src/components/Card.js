@@ -25,8 +25,8 @@ const Card = ({_id, category,depth,description,height, length, materials, name, 
             </div>
             <div className='card-footer'>
                 <div>
-                    <p>Type de meuble : <span className='badge black'>{category}</span></p>
-                    <p>Quantité: <span className='badge orange'>{quantity}</span></p>
+                    <p>Type de meuble : {category}</p>
+                    <p>Quantité: {quantity}</p>
                 </div>
                 {showDetail ? 
                 <div>
@@ -34,7 +34,7 @@ const Card = ({_id, category,depth,description,height, length, materials, name, 
                     <h3>Matériaux utilisés : </h3>
                     <p>{materials}</p>
                 </aside>
-                <button className='btnBlack' onClick={seeDetails}>
+                <button className='btnBlack small' onClick={seeDetails}>
                 Masquer les matériaux de fabrication
                 </button>
             </div>

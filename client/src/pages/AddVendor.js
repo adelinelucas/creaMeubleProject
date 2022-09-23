@@ -6,17 +6,10 @@ const AddVendor = () => {
     const [message, setMessage] = useState('');
     const handelForm = async(e)=> {
         e.preventDefault();
-        console.log('ok ok ')
-        const response =  await fetchConnexion();
-        console.log({response})
-        if(response){
-          setMessage('Le fournisseur n\'a pas pu être ajouté à la base de donnée.') 
-        }else{
-            setMessage('Le fournisseur à bien été ajouté à la base de donnée') 
-        }
+        await fetchaddVendor();        
     }
 
-    const fetchConnexion = async()=> {
+    const fetchaddVendor = async()=> {
         try{
             const response = await fetch('http://localhost:5000/admin/vendor', {
                 method: 'POST',
@@ -26,8 +19,13 @@ const AddVendor = () => {
                 },
                 body: JSON.stringify({name, numeroSiret})
               });
+            console.log(response)
+            if(response.status >= 400){
+                setMessage('Le fournisseur n\'a pas pu être ajouté à la base de donnée.') 
+              }else{
+                  setMessage('Le fournisseur à bien été ajouté à la base de donnée') 
+              }
             const responseResult = await response.json();
-            console.log(responseResult);
             return responseResult; 
             //   props.setUser(content.user)
             //   navigation('/meubles');

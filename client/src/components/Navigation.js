@@ -9,7 +9,7 @@ const Navigation = () => {
                     <img src="./images/logo2.png" alt="logo de l'entreprise Créa Meuble" />
                 </div>
                 <div className='nav-linksBloc'>
-                    <NavLink to={'/'} 
+                    <NavLink to={'/home'} 
                     className={(nav)=> (nav.isActive ? "nav-active": "")}>
                         Accueil
                     </NavLink>

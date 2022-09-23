@@ -9,6 +9,7 @@ import CreateMeuble from './pages/CreateMeuble';
 import AddVendor from './pages/AddVendor';
 import AddMaterials from './pages/AddMaterials';
 import DetailMaterials from './components/DetailMaterials';
+import WelcomeMessage from './components/WelcomeMessage';
 
 function App() {
   const [user, setUser]= useState();
@@ -21,8 +22,12 @@ function App() {
   return (
     <div className="app">
       <Header />
+      {user ? (
+        <WelcomeMessage user={user}/>
+      ): null
+      }
       <Routes>
-        <Route path='/' element={<Home/>} />
+        <Route path='/home' element={<Home/>} />
         <Route path='/connexion' element={<Connexion setUser={setUser}/>} />
         {user ? (
           <>

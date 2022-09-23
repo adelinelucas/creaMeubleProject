@@ -6,13 +6,13 @@ const Connexion = (props) => {
     const [userAuthorize, setUserAuthorize] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigation = useNavigate()
+    const navigation = useNavigate();
+    const [message, setMessage] = useState('');
 
     const handelForm = async(e)=> {
         e.preventDefault();
-        console.log('ok ok ')
         if(email !=='' && password !== ''){
-            await fetchConnexion();
+           await fetchConnexion();
         }else{
             setUserAuthorize("L'email et le password doivent être complétés pour pouvoir s'authentifier.")
         }
@@ -28,6 +28,9 @@ const Connexion = (props) => {
                 },
                 body: JSON.stringify({email:email, password:password})
               });
+              if(response.status > 400){
+                return setMessage('Les identifiants de connexion sont incorrects')
+              }
               const content = await response.json();
               props.setUser(content.user)
               navigation('/meubles');
@@ -62,9 +65,9 @@ const Connexion = (props) => {
                             />
                         <button className='btnOrange' type="submit">Se connecter</button>
                     </form>
-                    {userAuthorize && 
+                    {message && 
                         <div>
-                            <i>Important : {userAuthorize}</i>
+                            <i className='infos'>{message}</i>
                         </div>
                         }
                 </div>
